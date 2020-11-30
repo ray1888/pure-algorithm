@@ -1,6 +1,10 @@
 package maxflow
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func Test_mincut(t *testing.T) {
 	type args struct {
@@ -35,7 +39,8 @@ func Test_mincut(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			mincut(tt.args.graph, tt.args.s, tt.args.t)
+			r := mincut(tt.args.graph, tt.args.s, tt.args.t)
+			assert.EqualValues(t, r, tt.want)
 		})
 	}
 }
