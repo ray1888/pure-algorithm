@@ -31,7 +31,7 @@ func bfs(rGraph [][]int, s, t int, parent []int) bool {
 			}
 		}
 	}
-	return visited[t] == true
+	return visited[t]
 }
 
 func fordFulkerson(graph [][]int, s, t int) int {
